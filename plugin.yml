@@ -1,0 +1,7 @@
+name: QuickJoinMsg
+author: TheDragonRing
+version: 1.0.0
+description: The simplest join message plugin around
+api: 1.14.0
+main: TheDragonRing\QuickJoinMsg\Main
+load: STARTUP
