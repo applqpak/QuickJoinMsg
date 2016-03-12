@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
                 }
                 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::GREEN." Enabled!");
+		$this->getLogger()->info("0§l[§r§bQuickJoinMsg§t0§l]§r".Colour::GREEN." Enabled!");
 		
 			@mkdir($this->getDataFolder());
 			$this->yml = new Config($this->getDataFolder()."joinmsg.yml",Config::YAML, array(
@@ -63,11 +63,11 @@ class Main extends PluginBase implements Listener{
 	}
 	
 	public function onDisable(){
-		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::DARK_RED." Disabled!");
+		$this->getLogger()->info("0§l[§r§bQuickJoinMsg§t0§l]§r".Colour::DARK_RED." Disabled!");
 	}
 	
-    private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
-    private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
+    private $permMessage = Colour::DARK_RED."0§l[§r§bQuickJoinMsg§t0§l]§r§4 You do not have permission to run this command!";
+    private $consoleMsg = Colour::DARK_RED."0§l[§r§bQuickJoinMsg§t0§l]§r§4 This command can only be executed in-game!";
 
 	public function onJoin(PlayerJoinEvent $event){
 		$player = $event->getPlayer();
@@ -84,8 +84,8 @@ class Main extends PluginBase implements Listener{
 		if(strtolower($cmd->getName() == "quickjoinmsg")){
 			if(!($sender instanceof Player)){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::AQUA."QuickJoinMsg v1.0.0 Info".Colour::BLACK."]---");
-				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing")));
-				$sender->sendMessage(Colour::AQUA."Commands-")));
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing");
+				$sender->sendMessage(Colour::AQUA."Commands-");
 				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
                 $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
                 $sender->sendMessage(Colour::AQUA."Permissions-")
@@ -99,8 +99,8 @@ class Main extends PluginBase implements Listener{
                         return true;
                             }else{
                                 $sender->sendMessage(Colour::BLACK. "---[".Colour::AQUA."QuickJoinMsg v1.0.0 Info".Colour::BLACK."]---");
-				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing")));
-				                $sender->sendMessage(Colour::AQUA."Commands-")));
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing");
+				                $sender->sendMessage(Colour::AQUA."Commands-");
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
 				                $sender->sendMessage(Colour::AQUA."Permissions-");
@@ -134,7 +134,7 @@ class Main extends PluginBase implements Listener{
                                             }else{
                                                 $join_msg = implode(" ", $args);
                                                 $this->yml->set("JoinMsg", $join_msg);
-                                                $sender->sendMessage(Colour::GREEN . "§0§l[§r§bQuickJoinMsg§t0§l]§rSuccessfully set new Join Message.");
+                                                $sender->sendMessage(Colour::GREEN . "§0§l[§r§bQuickJoinMsg§t0§l]§r§a Successfully set new Join Message.");
                                         return true;
                                   }
                             }
