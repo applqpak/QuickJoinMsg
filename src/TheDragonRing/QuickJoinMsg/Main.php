@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
                 }
                 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::GREEN." Enabled!")
+		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::GREEN." Enabled!");
 		
 			@mkdir($this->getDataFolder());
 			$this->yml = new Config($this->getDataFolder()."joinmsg.yml",Config::YAML, array(
