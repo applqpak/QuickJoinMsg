@@ -122,7 +122,7 @@ class Main extends PluginBase implements Listener{
                 $sender->sendMessage(Colour::GREEN . "§0§l[§r§bQuickJoinMsg§t0§l]§r§a Successfully set new Join Message.");
                 return true;
                     }}else{           
-                        if(!($sender->hasPermission("quickjoinmsg.set"){
+                        if(!($sender->hasPermission("quickjoinmsg.set"))){
                             $sender->sendMessage("$this->permMessage)";
                             return true;
                                 }else{
