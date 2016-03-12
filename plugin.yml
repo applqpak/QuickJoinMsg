@@ -17,7 +17,7 @@ commands:
     aliases: sjm
     permission: quickjoinmsg.set
 permissions:
-  setjoinmsg:
+  quickjoinmsg:
     default: op
       children:
         quickjoinmsg.info:
