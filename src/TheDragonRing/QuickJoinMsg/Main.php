@@ -94,7 +94,6 @@ class Main extends PluginBase implements Listener{
                                   {
                                         $join_msg = implode(" ", $args);
                                         $this->yml->set("JoinMsg", $join_msg);
-                                        $this->yml->save();
                                         $sender->sendMessage(Colour::GREEN . "Successfully set new Join Message.");
                                         return true;
                                   }
