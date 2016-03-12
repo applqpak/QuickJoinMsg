@@ -89,13 +89,12 @@ class Main extends PluginBase implements Listener{
 				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
                 $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
                 $sender->sendMessage(Colour::AQUA."Permissions-");
-				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg".Colour::WHITE." Allows use of all QuickJoinMsg features - Default: OP Only");
 				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.info".Colour::WHITE." Allows use of /quickjoinmsg - Default: Anyone");
 				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.set".Colour::WHITE." Allows use of /setjoinmsg -  Default: OP Only");
 				return true;
                     }else{
                         if(!($sender->hasPermission("quickjoinmsg.info"){
-                        $sender->sendMessage($this->permMessage);
+                        $sender->sendMessage("$this->permMessage");
                         return true;
                             }else{
                                 $sender->sendMessage(Colour::BLACK. "---[".Colour::AQUA."QuickJoinMsg v1.0.0 Info".Colour::BLACK."]---");
@@ -104,7 +103,6 @@ class Main extends PluginBase implements Listener{
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
 				                $sender->sendMessage(Colour::AQUA."Permissions-");
-								$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg".Colour::WHITE." Allows use of all QuickJoinMsg features - Default: OP Only");
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.info".Colour::WHITE." Allows use of /quickjoinmsg - Default: Anyone");
 				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.set".Colour::WHITE." Allows use of /setjoinmsg -  Default: OP Only");
                                 return true;
@@ -125,7 +123,7 @@ class Main extends PluginBase implements Listener{
                 return true;
                     }}else{           
                         if(!($sender->hasPermission("quickjoinmsg.set"){
-                            $sender->sendMessage($this->permMessage);
+                            $sender->sendMessage("$this->permMessage)";
                             return true;
                                 }else{
                                     if(!(isset($args[0]))){

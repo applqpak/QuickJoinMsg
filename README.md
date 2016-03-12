@@ -21,8 +21,6 @@ This plugin is a really simple welcome plugin where the owner can create a custo
    • /setjoinmsg  - Set custom join message (alias = sjm)
 
 #Permissions-
-   • quickjoinmsg - Allows all QuickJoinMsg features - Default: OP Only
-
    • quickjoinmsg.info - Allows /quickjoinmsg - Default: Anyone
 
    • quickjoinmsg.set - Allows /setjoinmsg - Defualt: OP Only
