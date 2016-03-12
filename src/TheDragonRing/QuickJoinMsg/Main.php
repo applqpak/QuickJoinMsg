@@ -68,21 +68,37 @@ class Main extends PluginBase implements Listener{
 
         public function onCommand(CommandSender $sender, Command $cmd, $label, array $args)
         {
-
-                if(strtolower($cmd->getName()) === "setjoinmsg")
+                if(!($sender instanceof Player))
                 {
-                      if(!(isset($args[0])))
+                      $sender->sendMessage($this->consoleMsg);
+                      return true;
+                }
+                else
+                {
+
+                      if(strtolower($cmd->getName()) === "setjoinmsg")
                       {
-                            $sender->sendMessage(Colour::RED . "You did not specify a Join Message. Please use /setjoinmsg < message >");
-                            return true;
-                      }
-                      else
-                      {
-                            $join_msg = implode(" ", $args);
-                            $this->yml->set("JoinMsg", $join_msg);
-                            $this->yml->save();
-                            $sender->sendMessage(Colour::GREEN . "Successfully set new Join Message.");
-                            return true;
+                            if(!($sender->hasPermission("setjoinmsg.command")
+                            {
+                                  $sender->sendMessage($this->permMessage);
+                                  return true;
+                            }
+                            else
+                            {
+                                  if(!(isset($args[0])))
+                                  {
+                                        $sender->sendMessage(Colour::RED . "You did not specify a Join Message. Please use /setjoinmsg < message >");
+                                        return true;
+                                  }
+                                  else
+                                  {
+                                        $join_msg = implode(" ", $args);
+                                        $this->yml->set("JoinMsg", $join_msg);
+                                        $this->yml->save();
+                                        $sender->sendMessage(Colour::GREEN . "Successfully set new Join Message.");
+                                        return true;
+                                  }
+                            }
                       }
                 }
           }
