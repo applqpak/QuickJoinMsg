@@ -68,16 +68,11 @@ class Main extends PluginBase implements Listener{
 
         public function onCommand(CommandSender $sender, Command $cmd, $label, array $args)
         {
-                if(!($sender instanceof Player))
-                {
-                      $sender->sendMessage($this->consoleMsg);
-                      return true;
-                }
-                else
-                {
 
-                      if(strtolower($cmd->getName()) === "setjoinmsg")
-                      {
+                if(strtolower($cmd->getName()) === "setjoinmsg")
+                {
+                      if(!($sender instanceof Player))
+                      {            
                             if(!($sender->hasPermission("setjoinmsg.command")
                             {
                                   $sender->sendMessage($this->permMessage);
