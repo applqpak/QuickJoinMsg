@@ -16,7 +16,7 @@ This plugin is a really simple welcome plugin where the owner can create a custo
    • The ability to set the join message with an in-game command
 
 #Commands-
-   • /quickjoinmsg - View all the info about RuleKit, version, author, commands and permissions (alias = /qjm)
+   • /quickjoinmsg - View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)
 
    • /setjoinmsg  - Set custom join message (alias = sjm)
 

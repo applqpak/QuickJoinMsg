@@ -65,42 +65,6 @@ class Main extends PluginBase implements Listener{
 	public function onDisable(){
 		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::DARK_RED." Disabled!");
 	}
-
-        public function onCommand(CommandSender $sender, Command $cmd, $label, array $args)
-        {
-
-                if(strtolower($cmd->getName()) === "setjoinmsg")
-                {
-                      if(!($sender instanceof Player))
-                      { 
-                            $sender->sendMessage($this->consoleMsg);
-                            return true;
-                      }
-                      else
-                      {           
-                            if(!($sender->hasPermission("setjoinmsg.command")
-                            {
-                                  $sender->sendMessage($this->permMessage);
-                                  return true;
-                            }
-                            else
-                            {
-                                  if(!(isset($args[0])))
-                                  {
-                                        $sender->sendMessage(Colour::RED . "You did not specify a Join Message. Please use /setjoinmsg < message >");
-                                        return true;
-                                  }
-                                  else
-                                  {
-                                        $join_msg = implode(" ", $args);
-                                        $this->yml->set("JoinMsg", $join_msg);
-                                        $sender->sendMessage(Colour::GREEN . "Successfully set new Join Message.");
-                                        return true;
-                                  }
-                            }
-                      }
-                }
-          }
 	
     private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
     private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
@@ -113,4 +77,69 @@ class Main extends PluginBase implements Listener{
 		return true;
 		break;
 	}
+
+    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+        
+//quickjoinmsg
+		if(strtolower($cmd->getName() == "quickjoinmsg")){
+			if(!($sender instanceof Player)){
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::AQUA."QuickJoinMsg v1.0.0 Info".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing")));
+				$sender->sendMessage(Colour::AQUA."Commands-")));
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
+                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
+                $sender->sendMessage(Colour::AQUA."Permissions-")
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg".Colour::WHITE." Allows use of all QuickJoinMsg features - Default: OP Only");
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.info".Colour::WHITE." Allows use of /quickjoinmsg - Default: Anyone");
+				$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.set".Colour::WHITE." Allows use of /setjoinmsg -  Default: OP Only");
+				return true;
+                    }else{
+                        if(!($sender->hasPermission("quickjoinmsg.info"){
+                        $sender->sendMessage($this->permMessage);
+                        return true;
+                            }else{
+                                $sender->sendMessage(Colour::BLACK. "---[".Colour::AQUA."QuickJoinMsg v1.0.0 Info".Colour::BLACK."]---");
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."Plugin Author: ".Colour::WHITE."TheDragonRing")));
+				                $sender->sendMessage(Colour::AQUA."Commands-")));
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/quickjoinmsg".Colour::WHITE." View all the info about QuickJoinMsg, version, author, commands and permissions (alias = /qjm)");
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."/setjoinmsg <message>".Colour::WHITE." Set custom join message (alias = /sjm)");
+				                $sender->sendMessage(Colour::AQUA."Permissions-");
+								$sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg".Colour::WHITE." Allows use of all QuickJoinMsg features - Default: OP Only");
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.info".Colour::WHITE." Allows use of /quickjoinmsg - Default: Anyone");
+				                $sender->sendMessage(Colour::BLACK. "- ".Colour::DARK_GREEN."quickjoinmsg.set".Colour::WHITE." Allows use of /setjoinmsg -  Default: OP Only");
+                                return true;
+                            }
+                        }
+                    }
+                break;
+//setjoinmsg
+        if(strtolower($cmd->getName()) === "setjoinmsg"){
+            if(!($sender instanceof Player)){
+                if(!(isset($args[0]))){
+                    $sender->sendMessage(Colour::RED . "§0§l[§r§bQuickJoinMsg§t0§l]§r§4 You did not specify a Join Message. Please use /setjoinmsg <message>");
+                    return true;
+                        }else{
+                $join_msg = implode(" ", $args);
+                $this->yml->set("JoinMsg", $join_msg);
+                $sender->sendMessage(Colour::GREEN . "§0§l[§r§bQuickJoinMsg§t0§l]§r§a Successfully set new Join Message.");
+                return true;
+                    }}else{           
+                        if(!($sender->hasPermission("quickjoinmsg.set"){
+                            $sender->sendMessage($this->permMessage);
+                            return true;
+                                }else{
+                                    if(!(isset($args[0]))){
+                                        $sender->sendMessage(Colour::RED . "§0§l[§r§bQuickJoinMsg§t0§l]§r§4 You did not specify a Join Message. Please use /setjoinmsg <message>");
+                                        return true;
+                                            }else{
+                                                $join_msg = implode(" ", $args);
+                                                $this->yml->set("JoinMsg", $join_msg);
+                                                $sender->sendMessage(Colour::GREEN . "§0§l[§r§bQuickJoinMsg§t0§l]§rSuccessfully set new Join Message.");
+                                        return true;
+                                  }
+                            }
+                      }
+                }
+            break;
+        }
 }
