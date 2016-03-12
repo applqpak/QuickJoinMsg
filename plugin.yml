@@ -6,10 +6,21 @@ api: 1.14.0
 main: TheDragonRing\QuickJoinMsg\Main
 load: STARTUP
 commands:
+  quickjoinmsg:
+    usage: /quickjoinmsg
+    description: View all the info about RuleKit, version, author, commands and permissions (alias = /qjm)
+    aliases: qjm
+    permission: quickjoinmsg.info
   setjoinmsg:
-    usage: "/setjoinmsg < message >"
-    description: Set Custom Join Message
-    permission: setjoinmsg.command
+    usage: /setjoinmsg <message>
+    description: Set custom join message (alias = sjm)
+    aliases: sjm
+    permission: quickjoinmsg.set
 permissions:
-  setjoinmsg.command:
+  setjoinmsg:
     default: op
+      children:
+        quickjoinmsg.info:
+          default: true
+        quickjoinmsg.set:
+          default: op
