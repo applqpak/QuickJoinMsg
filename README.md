@@ -13,8 +13,19 @@ This plugin is a really simple welcome plugin where the owner can create a custo
 #Completed Features-
    • A customisable Join/Welcome message that is sent to each player as they join - set this in the config named joinmsg.yml
 
-#Planned Features-
-   • Ability to set Join/Welcome Message with a command
+   • The ability to set the join message with an in-game command
+
+#Commands-
+   • /quickjoinmsg - View all the info about RuleKit, version, author, commands and permissions (alias = /qjm)
+
+   • /setjoinmsg  - Set custom join message (alias = sjm)
+
+#Permissions-
+   • quickjoinmsg - Allows all QuickJoinMsg features - Default: OP Only
+
+   • quickjoinmsg.info - Allows /quickjoinmsg - Default: Anyone
+
+   • quickjoinmsg.set - Allows /setjoinmsg - Defualt: OP Only
 
 #IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE-
 Anyone may contribute to QuickJoinMsg but contributions will be reviewed by me and must be submitted as either a GitHub pull request or the code sent to me somewhere. Redistributing is not allowed unless you have spoken to me and I have given permission, depending on what you are posting it on you will be given further terms.
