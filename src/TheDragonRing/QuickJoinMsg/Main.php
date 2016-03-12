@@ -65,6 +65,27 @@ class Main extends PluginBase implements Listener{
 	public function onDisable(){
 		$this->getLogger()->info(Colour::AQUA."QuickJoinMsg by TheDragonRing".Colour::DARK_RED." Disabled!");
 	}
+
+        public function onCommand(CommandSender $sender, Command $cmd, $label, array $args)
+        {
+
+                if(strtolower($cmd->getName()) === "setjoinmsg")
+                {
+                      if(!(isset($args[0])))
+                      {
+                            $sender->sendMessage(Colour::RED . "You did not specify a Join Message. Please use /setjoinmsg < message >");
+                            return true;
+                      }
+                      else
+                      {
+                            $join_msg = implode(" ", $args);
+                            $this->yml->set("JoinMsg", $join_msg);
+                            $this->yml->save();
+                            $sender->sendMessage(Colour::GREEN . "Successfully set new Join Message.");
+                            return true;
+                      }
+                }
+          }
 	
     private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
     private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";

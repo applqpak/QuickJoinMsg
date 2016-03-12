@@ -5,3 +5,11 @@ description: The simplest join message plugin around
 api: 1.14.0
 main: TheDragonRing\QuickJoinMsg\Main
 load: STARTUP
+commands:
+  setjoinmsg:
+    usage: "/setjoinmsg < message >"
+    description: Set Custom Join Message
+    permission: setjoinmsg.command
+permissions:
+  setjoinmsg.command:
+    default: op
